@@ -23,7 +23,12 @@
                 </ul>
             </div>
             <div class="nav-right">
-                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Titoli, persone, generi">
+                    <i class="fas fa-search"></i>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                <button class="icon-btn theme-toggle" title="Toggle tema"><i class="fas fa-moon"></i></button>
                 <button class="icon-btn"><i class="fas fa-bell"></i></button>
                 <div class="profile">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
@@ -122,17 +127,28 @@
             <button class="modal-close"><i class="fas fa-times"></i></button>
             <div class="modal-header" id="modal-header">
                 <div class="modal-buttons">
-                    <button class="btn btn-play"><i class="fas fa-play"></i> Riproduci</button>
-                    <button class="btn-round"><i class="fas fa-plus"></i></button>
-                    <button class="btn-round"><i class="fas fa-thumbs-up"></i></button>
+                    <button class="btn btn-play" onclick="playMovie()"><i class="fas fa-play"></i> Riproduci</button>
+                    <button class="btn-round" onclick="addToList()" title="Aggiungi a La mia lista"><i class="fas fa-plus"></i></button>
+                    <button class="btn-round" onclick="likeMovie()" title="Mi piace"><i class="fas fa-thumbs-up"></i></button>
+                    <button class="btn-round" title="Altro"><i class="fas fa-share"></i></button>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="modal-info">
-                    <span class="match">98% Match</span>
-                    <span class="year">2024</span>
-                    <span class="rating">16+</span>
-                    <span class="duration">2h 15m</span>
+                    <span class="match" id="modal-match">98% Match</span>
+                    <span class="year" id="modal-year">2024</span>
+                    <span class="rating" id="modal-rating">16+</span>
+                    <span class="duration" id="modal-duration">2h 15m</span>
+                </div>
+                <div class="modal-meta">
+                    <div class="meta-group">
+                        <label>Genere:</label>
+                        <span id="modal-genre">Thriller, Sci-Fi</span>
+                    </div>
+                    <div class="meta-group">
+                        <label>Con:</label>
+                        <span id="modal-cast">Cast non disponibile</span>
+                    </div>
                 </div>
                 <p class="modal-description" id="modal-description"></p>
             </div>
