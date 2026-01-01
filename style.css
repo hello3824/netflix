@@ -101,6 +101,182 @@ button {
     transform: scale(1.1);
 }
 
+/* Search Bar */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 8px 12px;
+    transition: all 0.3s;
+}
+
+.search-bar:focus-within {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #e50914;
+}
+
+#search-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 200px;
+    outline: none;
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar i {
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+/* Search Results */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #181818;
+    border: 1px solid #333;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: background 0.2s;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-result-item:hover {
+    background: #333;
+}
+
+.search-result-item img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.search-result-info {
+    flex: 1;
+}
+
+.search-result-title {
+    font-weight: bold;
+}
+
+.search-result-year {
+    font-size: 0.85rem;
+    color: #808080;
+}
+
+/* Theme Toggle */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+body.light-mode .header {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, transparent 100%);
+}
+
+body.light-mode .header.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.light-mode .navbar {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+body.light-mode .logo {
+    color: #e50914;
+}
+
+body.light-mode .nav-links a {
+    color: #333;
+}
+
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+    color: #e50914;
+}
+
+body.light-mode .hero {
+    background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, transparent 50%),
+                url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4571-b2c0-f48e9f9ab0ab/IT-it-20240213-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+}
+
+body.light-mode .hero-title {
+    color: #000;
+}
+
+body.light-mode .hero-description {
+    color: #333;
+}
+
+body.light-mode .main-content {
+    background: #f5f5f5;
+}
+
+body.light-mode .row-title {
+    color: #000;
+}
+
+body.light-mode .card {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.light-mode .search-bar {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: #e5e5e5;
+}
+
+body.light-mode .search-bar:focus-within {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode #search-input {
+    color: #000;
+}
+
+body.light-mode .search-results {
+    background: #fff;
+    border-color: #e5e5e5;
+}
+
+body.light-mode .search-result-item {
+    color: #000;
+    border-bottom-color: #e5e5e5;
+}
+
+body.light-mode .search-result-item:hover {
+    background: #f5f5f5;
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -475,11 +651,41 @@ button {
     padding: 30px;
 }
 
+.modal-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0 30px;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.meta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-group label {
+    color: #808080;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.meta-group span {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
 .modal-info {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
     font-size: 0.9rem;
+    flex-wrap: wrap;
 }
 
 .match {
@@ -567,6 +773,145 @@ button {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* Toast Notifications */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #1a1a1a;
+    border-left: 4px solid #46d369;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-error {
+    border-left-color: #e50914;
+}
+
+.toast-info {
+    border-left-color: #0080ff;
+}
+
+/* Fade-in animation per le card */
+.card {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animazione per il modal */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal.active .modal-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Animazione pulsanti */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Hero content fade-in */
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Row titles slide-in */
+.row-title {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover effetto card più fluido */
+.card {
+    filter: brightness(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    filter: brightness(1);
+    box-shadow: 0 8px 16px rgba(229, 9, 20, 0.3);
 }
 
 /* Responsive Design */
