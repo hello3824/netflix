@@ -4,74 +4,72 @@
 [![Progress: 15%](https://img.shields.io/badge/Progress-15%25-orange.svg)]()
 [![Stack: MERN](https://img.shields.io/badge/Stack-MERN-blue.svg)]()
 
-> **Nota:** Questo progetto è attualmente in fase di sviluppo attivo. L'obiettivo è costruire un ecosistema di streaming completo ispirato a Netflix per dimostrare le competenze di **Mirai** nell'architettura MERN (MongoDB, Express, React, Node).
+> **Note:** This project is currently under active development. The goal is to build a complete streaming ecosystem inspired by Netflix to showcase **Mirai's** expertise in the MERN stack (MongoDB, Express, React, Node.js).
 
 ---
 
-## 🎯 Visione del Progetto
-**StreamPulse** nasce per esplorare le sfide tecniche dello sviluppo full-stack moderno: gestione di interfacce ad alto impatto visivo, logica di autenticazione sicura e integrazione di dati multimediali in tempo reale.
+## 🎯 Project Vision
+**StreamPulse** was created to explore the technical challenges of modern full-stack development: managing high-impact visual interfaces, secure authentication logic, and real-time multimedia data integration.
 
-### Funzionalità in fase di sviluppo:
-* 🔐 **Autenticazione:** Registrazione e login sicuro tramite JSON Web Tokens (JWT).
-* 🎬 **Content Streaming:** Integrazione con TMDB API per il recupero di metadati e trailer.
-* 📋 **Watchlist Personale:** Database per salvare e gestire i contenuti preferiti.
-* 📱 **Design Responsivo:** UI ottimizzata per ogni tipo di dispositivo.
+### Features under development:
+* 🔐 **Authentication:** Secure registration and login using JSON Web Tokens (JWT).
+* 🎬 **Content Streaming:** Integration with TMDB API for fetching metadata and trailers.
+* 📋 **Personal Watchlist:** Persistent database for saving and managing favorite content.
+* 📱 **Responsive Design:** UI optimized for all devices (Mobile, Tablet, Desktop).
 
 ---
 
-## 🛠 Tech Stack (Pianificato)
+## 🛠 Tech Stack (Planned)
 
-| Livello | Tecnologie |
+| Layer | Technologies |
 | :--- | :--- |
 | **Frontend** | React, Tailwind CSS, Redux Toolkit |
 | **Backend** | Node.js, Express.js |
 | **Database** | MongoDB Atlas |
-| **Autenticazione** | JWT & Bcrypt |
+| **Authentication** | JWT & Bcrypt |
 | **Media Data** | The Movie Database (TMDB) API |
 
 ---
 
-## 🗺️ Roadmap di Sviluppo
+## 🗺️ Development Roadmap
 
-### Fase 1: Setup & Backend Core 🏗️
-- [x] Inizializzazione repository GitHub e documentazione.
-- [ ] Configurazione ambiente Node/Express.
-- [ ] Connessione al database MongoDB.
-- [ ] Definizione degli schemi utente e film.
+### Phase 1: Setup & Backend Core 🏗️
+- [x] Initial GitHub repository setup and documentation.
+- [ ] Node/Express environment configuration.
+- [ ] MongoDB database connection.
+- [ ] User and Movie schema definitions.
 
-### Fase 2: Autenticazione & Sicurezza 🔑
-- [ ] Implementazione API per registrazione e login.
-- [ ] Hashing delle password.
-- [ ] Middleware di protezione per le rotte private.
+### Phase 2: Auth & Security 🔑
+- [ ] Implementation of registration and login APIs.
+- [ ] Password hashing logic.
+- [ ] Route protection middleware.
 
-### Fase 3: Frontend & UI 🎨
-- [ ] Setup React con Tailwind CSS.
-- [ ] Sviluppo Navbar e Hero Section dinamica.
-- [ ] Integrazione chiamate API esterne (TMDB).
+### Phase 3: Frontend & UI 🎨
+- [ ] React setup with Tailwind CSS.
+- [ ] Development of Navbar and dynamic Hero Section.
+- [ ] Integration of external API calls (TMDB).
 
 ---
 
-## ⚙️ Setup Locale
+## ⚙️ Local Setup
 
 ```bash
-# 1. Clona il repository
-git clone [https://github.com/tuo-username/streampulse.git](https://github.com/tuo-username/streampulse.git)
+# 1. Clone the repository
+git clone [https://github.com/your-username/streampulse.git](https://github.com/your-username/streampulse.git)
 
-# 2. Installa le dipendenze
-# (Eseguire nelle rispettive cartelle una volta create)
+# 2. Install dependencies
+# (To be executed in respective folders once created)
 cd server && npm install
 cd ../client && npm install
-⚖️ Note Legali & Disclaimer
-Questo progetto è sviluppato da Mirai esclusivamente per scopi formativi e di portfolio.
+⚖️ Legal Note & Disclaimer
+This project is developed by Mirai for educational and portfolio purposes only.
 
-Non ospita alcun contenuto video protetto da copyright.
+It does not host any copyrighted video content.
 
-Tutti i dati relativi ai film sono forniti tramite l'API di TMDB.
+All movie-related data and images are provided by the TMDB API.
 
-Il progetto non è affiliato, sponsorizzato o approvato da Netflix, Inc.
+This project is not affiliated with, sponsored by, or endorsed by Netflix, Inc.
 
-L'uso del design è ispirato a scopi di studio della UX/UI.
+The UI design is inspired by Netflix for UX/UI study purposes.
 
-Sviluppatore: Mirai
-
-Stato Attuale: Configurazione dell'architettura iniziale.
+Developer: Mirai
