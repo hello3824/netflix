@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="#" class="logo">NETFLIX</a>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Serie TV</a></li>
+                    <li><a href="#">Film</a></li>
+                    <li><a href="#">Nuovi e popolari</a></li>
+                    <li><a href="#">La mia lista</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <button class="icon-btn"><i class="fas fa-bell"></i></button>
+                <div class="profile">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Stranger Things</h1>
+            <p class="hero-description">
+                Quando un ragazzino scompare, una piccola città scopre una storia che coinvolge 
+                esperimenti segreti, forze soprannaturali terrificanti e una strana bambina.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-play">
+                    <i class="fas fa-play"></i> Riproduci
+                </button>
+                <button class="btn btn-info">
+                    <i class="fas fa-info-circle"></i> Altre info
+                </button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Content Rows -->
+    <main class="main-content">
+        <!-- Trending Now -->
+        <section class="content-row">
+            <h2 class="row-title">Di tendenza</h2>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content" id="trending">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Top 10 -->
+        <section class="content-row">
+            <h2 class="row-title">Top 10 in Italia oggi</h2>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content top-10" id="top10">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Action Movies -->
+        <section class="content-row">
+            <h2 class="row-title">Film d'azione</h2>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content" id="action">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Comedies -->
+        <section class="content-row">
+            <h2 class="row-title">Commedie</h2>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content" id="comedy">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Documentaries -->
+        <section class="content-row">
+            <h2 class="row-title">Documentari</h2>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content" id="documentary">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for movie details -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header" id="modal-header">
+                <div class="modal-buttons">
+                    <button class="btn btn-play"><i class="fas fa-play"></i> Riproduci</button>
+                    <button class="btn-round"><i class="fas fa-plus"></i></button>
+                    <button class="btn-round"><i class="fas fa-thumbs-up"></i></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <span class="match">98% Match</span>
+                    <span class="year">2024</span>
+                    <span class="rating">16+</span>
+                    <span class="duration">2h 15m</span>
+                </div>
+                <p class="modal-description" id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Audio e sottotitoli</a>
+                <a href="#">Centro assistenza</a>
+                <a href="#">Carte regalo</a>
+                <a href="#">Stampa</a>
+                <a href="#">Opportunità di lavoro</a>
+                <a href="#">Termini di utilizzo</a>
+                <a href="#">Privacy</a>
+                <a href="#">Note legali</a>
+                <a href="#">Cookie</a>
+                <a href="#">Preferenze cookie</a>
+                <a href="#">Informazioni sulla società</a>
+                <a href="#">Contattaci</a>
+            </div>
+            <p class="copyright">© 2026 Netflix Clone - Progetto didattico</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
