@@ -19,7 +19,7 @@
                     <li><a href="#">Serie TV</a></li>
                     <li><a href="#">Film</a></li>
                     <li><a href="#">Nuovi e popolari</a></li>
-                    <li><a href="#">La mia lista</a></li>
+                    <li><a href="#" id="my-list-link">La mia lista</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -37,6 +37,22 @@
             </div>
         </nav>
     </header>
+
+    <!-- Genre Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <h3>Filtra per genere:</h3>
+            <div class="genre-filters">
+                <button class="genre-btn active" data-genre="all">Tutti</button>
+                <button class="genre-btn" data-genre="Thriller">Thriller</button>
+                <button class="genre-btn" data-genre="Sci-Fi">Sci-Fi</button>
+                <button class="genre-btn" data-genre="Dramma">Dramma</button>
+                <button class="genre-btn" data-genre="Fantasy">Fantasy</button>
+                <button class="genre-btn" data-genre="Commedia">Commedia</button>
+                <button class="genre-btn" data-genre="Documentario">Documentario</button>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -60,6 +76,21 @@
 
     <!-- Content Rows -->
     <main class="main-content">
+        <!-- My List Section (Hidden by default) -->
+        <section class="content-row" id="my-list-section" style="display: none;">
+            <div class="my-list-header">
+                <h2 class="row-title">La mia lista</h2>
+                <button class="clear-list-btn" id="clear-list-btn">Svuota lista</button>
+            </div>
+            <div class="row-wrapper">
+                <button class="scroll-btn scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-content" id="my-list">
+                    <div class="empty-state">La tua lista è vuota. Aggiungi film cliccando il pulsante <i class="fas fa-plus"></i></div>
+                </div>
+                <button class="scroll-btn scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
         <!-- Trending Now -->
         <section class="content-row">
             <h2 class="row-title">Di tendenza</h2>
@@ -139,6 +170,17 @@
                     <span class="year" id="modal-year">2024</span>
                     <span class="rating" id="modal-rating">16+</span>
                     <span class="duration" id="modal-duration">2h 15m</span>
+                </div>
+                <div class="modal-rating-section">
+                    <label>Valutazione:</label>
+                    <div class="star-rating" id="star-rating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <span id="rating-text">Valuta questo film</span>
                 </div>
                 <div class="modal-meta">
                     <div class="meta-group">
