@@ -464,7 +464,7 @@ If you found this project helpful:
 
 <div align="center">
 
-### Made with ❤️ by Yassine Ayouni
+### Made with ❤️ by Mirai
 
 **[⬆ back to top](#netflix-clone-advanced-video-streaming-interface)**
 
