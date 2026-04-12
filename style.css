@@ -226,7 +226,7 @@ body.light-mode .nav-links a.active {
 
 body.light-mode .hero {
     background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, transparent 50%),
-                url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4571-b2c0-f48e9f9ab0ab/IT-it-20240213-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+                url('https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg');
 }
 
 body.light-mode .hero-title {
@@ -302,9 +302,10 @@ body.light-mode .search-result-item:hover {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 85vh;
+    height: 95vh;
+    min-height: 600px;
     background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 50%),
-                url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4571-b2c0-f48e9f9ab0ab/IT-it-20240213-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+                url('https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -320,10 +321,11 @@ body.light-mode .search-result-item:hover {
 
 .hero-title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 4.5rem;
+    font-size: 6rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    letter-spacing: 3px;
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.8);
+    letter-spacing: 2px;
+    line-height: 0.95;
 }
 
 .hero-description {
@@ -380,20 +382,28 @@ body.light-mode .search-result-item:hover {
 /* Main Content */
 .main-content {
     position: relative;
-    margin-top: -100px;
+    margin-top: -150px;
     padding: 0 60px;
     z-index: 10;
 }
 
+/* Row content needs vertical space for hover scale */
+.row-content {
+    padding: 50px 0 !important;
+    margin: -40px 0;
+}
+
 /* Content Rows */
 .content-row {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .row-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #e5e5e5;
+    letter-spacing: 0.3px;
 }
 
 .row-wrapper {
@@ -413,27 +423,29 @@ body.light-mode .search-result-item:hover {
     display: none;
 }
 
-/* Movie Cards */
+/* Movie Cards - Netflix poster style */
 .card {
     flex: 0 0 auto;
-    width: 250px;
+    width: 200px;
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
     position: relative;
+    background: #141414;
 }
 
 .card:hover {
-    transform: scale(1.08);
+    transform: scale(1.12);
     z-index: 100;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.75);
 }
 
 .card img {
     width: 100%;
-    height: 140px;
+    height: 300px;
     object-fit: cover;
+    display: block;
 }
 
 .card-info {
@@ -497,26 +509,35 @@ body.light-mode .search-result-item:hover {
 
 /* Top 10 Special Styling */
 .top-10 .card {
-    width: 200px;
+    width: 280px;
     display: flex;
     align-items: center;
+    background: transparent;
+    overflow: visible;
 }
 
 .top-10 .card .number {
     font-family: 'Bebas Neue', cursive;
-    font-size: 8rem;
+    font-size: 11rem;
+    line-height: 0.8;
     font-weight: bold;
     color: #141414;
-    -webkit-text-stroke: 3px #666;
-    margin-right: -40px;
+    -webkit-text-stroke: 4px #4a4a4a;
+    margin-right: -35px;
     z-index: 1;
+    flex-shrink: 0;
 }
 
 .top-10 .card img {
-    width: 130px;
-    height: 180px;
+    width: 160px;
+    height: 240px;
     object-fit: cover;
     border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.top-10 .card:hover {
+    transform: scale(1.08);
 }
 
 /* Scroll Buttons */
@@ -903,15 +924,13 @@ body.light-mode .search-result-item:hover {
     }
 }
 
-/* Hover effetto card più fluido */
-.card {
-    filter: brightness(0.8);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Card brightness effect */
+.card img {
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
 }
-
-.card:hover {
-    filter: brightness(1);
-    box-shadow: 0 8px 16px rgba(229, 9, 20, 0.3);
+.card:hover img {
+    filter: brightness(1.05);
 }
 
 /* Responsive Design */
@@ -944,9 +963,10 @@ body.light-mode .search-result-item:hover {
     }
     
     .card {
-        width: 200px;
+        width: 170px;
     }
-    
+    .card img { height: 255px; }
+
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -984,11 +1004,11 @@ body.light-mode .search-result-item:hover {
     }
     
     .card {
-        width: 150px;
+        width: 140px;
     }
-    
+
     .card img {
-        height: 100px;
+        height: 210px;
     }
     
     .scroll-btn {
@@ -1224,4 +1244,167 @@ body.light-mode .search-result-item:hover {
     .my-list-header {
         padding: 0 20px;
     }
+}
+
+/* ===== NUOVE FEATURES ===== */
+
+/* List count badge */
+.list-count {
+    display: inline-block;
+    min-width: 20px;
+    padding: 2px 6px;
+    margin-left: 4px;
+    background: #e50914;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+.list-count.hidden { display: none; }
+
+/* Sorpresami button */
+.btn-surprise {
+    background: linear-gradient(135deg, #e50914, #ff6b6b);
+    color: #fff;
+}
+.btn-surprise:hover {
+    background: linear-gradient(135deg, #ff6b6b, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+}
+
+/* Trailer button */
+.btn-trailer {
+    background: #ff0000;
+    color: #fff;
+}
+.btn-trailer:hover { background: #cc0000; }
+
+/* New badge */
+.card .new-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #e50914;
+    color: #fff;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Modal trailer iframe */
+.modal-trailer {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+.modal-trailer.active { display: block; }
+.modal-trailer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.modal-trailer.active + .modal-body { padding-top: 20px; }
+.modal.trailer-open .modal-header { display: none; }
+
+/* Keyboard focus on row */
+.row-wrapper.keyboard-focus {
+    outline: 2px solid #e50914;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Progress bar (continue watching) */
+.card .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.3);
+    z-index: 2;
+}
+.card .progress-bar-fill {
+    height: 100%;
+    background: #e50914;
+}
+
+/* HD + IMDB badges */
+.hd-badge {
+    border: 1px solid #808080;
+    color: #fff;
+    padding: 1px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
+.imdb-score {
+    color: #f5c518;
+    font-weight: bold;
+}
+.imdb-score i { margin-right: 4px; }
+
+/* Modal meta expanded */
+.modal-meta {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Similar Movies */
+.similar-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+.similar-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.similar-item {
+    background: #2f2f2f;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.similar-item:hover {
+    background: #3a3a3a;
+    transform: translateY(-3px);
+}
+.similar-item img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+.similar-item-body {
+    padding: 10px 12px;
+}
+.similar-item-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #fff;
+}
+.similar-item-meta {
+    font-size: 0.75rem;
+    color: #46d369;
+    display: flex;
+    gap: 8px;
+}
+@media (max-width: 768px) {
+    .similar-grid { grid-template-columns: repeat(2, 1fr); }
+    .modal-meta { grid-template-columns: 1fr !important; }
 }

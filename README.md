@@ -20,13 +20,20 @@
 
 ### ✅ Features Implemented:
 * 🎬 **50+ Movies Database:** Comprehensive movie catalog with metadata (title, genre, cast, ratings).
-* 🔍 **Smart Search:** Real-time search functionality across all movies.
-* 🎯 **Genre Filtering:** Filter movies by genre (Thriller, Sci-Fi, Dramma, Fantasy, Commedia, Documentario).
+* 🔍 **Smart Search:** Real-time search across titles AND cast names.
+* 🎯 **Genre Filtering:** Filter by Thriller, Sci-Fi, Dramma, Fantasy, Commedia, Documentario.
 * ⭐ **Rating System:** 5-star user rating system with persistent storage.
-* 📋 **Personal Watchlist:** Add/remove movies with localStorage persistence.
+* 📋 **Personal Watchlist:** Add/remove movies with live counter badge in navbar.
+* ⏯️ **Continue Watching:** Automatic row populated from recently opened titles (with progress bar).
+* 🎲 **Surprise Me:** Random movie picker button in the hero section.
+* 🎞️ **YouTube Trailers:** In-modal trailer playback via YouTube search embed.
+* 🆕 **"Nuovo" Badge:** Automatic NEW badge on 2023+ releases.
+* 🧩 **Similar Titles:** Modal shows 6 related movies based on shared genres.
+* 📊 **Rich Metadata:** Modal displays director, country, duration/seasons, age rating, IMDb score, languages, HD badge.
+* ⌨️ **Keyboard Navigation:** Arrow keys to navigate rows, Enter to open, ESC to close.
 * 🌓 **Dark/Light Mode:** Theme toggle with localStorage memory.
 * 📱 **Fully Responsive:** Optimized for mobile (480px), tablet (768px), and desktop.
-* 🖼️ **Lazy Loading:** Images load on-demand for better performance.
+* 🖼️ **Netflix-style Posters:** Portrait 2:3 poster cards with hover scale animation.
 * 🎨 **Enhanced Animations:** Smooth transitions and hover effects on all interactive elements.
 
 ---
@@ -47,12 +54,10 @@
 ## 📂 Project Structure
 
 ```
-netflix-1/
-├── index.html          # Main HTML structure (200+ lines)
-├── css/
-│   └── style.css       # Complete styling (1100+ lines)
-├── js/
-│   └── app.js          # Application logic (900+ lines)
+netflix/
+├── index.html          # Main HTML structure
+├── style.css           # Complete styling (1300+ lines)
+├── app.js              # Application logic (630+ lines, clean rewrite)
 ├── README.md           # Documentation
 └── .gitignore          # Git ignore file
 ```
@@ -287,6 +292,7 @@ Found a bug? Have a feature request?
 'netflix-theme'        // Dark/Light mode preference
 'netflix-mylist'       // Personal watchlist
 'netflix-ratings'      // Movie ratings
+'netflix-continue'     // Continue watching history
 ```
 
 Clear these in browser DevTools Console if needed:
